@@ -27,12 +27,33 @@ drivers, and drivers manage their trips and see their earnings. The app has thre
 | Vickson Ferrel Anak Raymond Lenggu | [@Vix0007](https://github.com/Vix0007) | Support Manager (Backend & AI Integration Specialist) | FR-20, FR-30, FR-AI-01, repository |
 | Bryan Andrew Amil | [@yonandrew](https://github.com/yonandrew) | Quality/Process Manager (QA & CI/CD Engineer) | Tests and CI |
 
+## Timeline
+
+<p align="center">
+  <img src="docs/assets/course-timeline.svg" alt="TMA3084 course timeline: Proposal Submission (Week 4, 9 Oct 2026), Proposal Presentation (Week 5, 19–23 Oct), Initial Report (Week 9, 16 Nov), Demo 1 (Week 9, 16–20 Nov), Final Report (Week 13, 24 Dec), Final Demo 2 (Week 14, 28–31 Dec), e-Archive (Week 15, before 10 Jan 2027)" width="100%">
+</p>
+
+### Team progress
+
+| Date | Activity | Output |
+|---|---|---|
+| 16 Oct 2026 | **Client meeting 1** with Saie Bin Kip (CEO), WhatsApp video call | Requirements gathered; [minutes](process_forms/meeting_minutes/Meeting_01_2026-10-16_Client.docx) |
+| 17 Oct 2026 | **Proposal submitted** | [Proposal v1.0](docs/Proposal/) |
+| 19–23 Oct 2026 | **Proposal presentation** (Week 5) | [Slides](docs/Proposal/TMA3084_G01_T13_Proposal_Slides.pptx) |
+| 7 Nov 2026 | **Client meeting 2** with Syahmi bin Saie (client's representative), WhatsApp video call | Figma UI and navigation reviewed; Flutter features agreed; [minutes](process_forms/meeting_minutes/Meeting_02_2026-11-07_Client.md) |
+| 14 Nov 2026 | SRS tasks distributed | |
+| 14–18 Nov 2026 | SRS first draft | |
+| 16 Nov 2026 | **SRS accepted by the client** (Saie Bin Kip), signed | SRS §4.5 Client Acceptance of Requirements |
+| 18 Nov 2026 | Slides and video tasks distributed | |
+| 19 Nov 2026 | Figma design converted to the Flutter prototype; GitHub repository set up | [`src/`](src/) |
+| 19–20 Nov 2026 | SRS and slides finalised; repository organised into `src/`, `docs/`, `process_forms/` | [`docs/SRS`](docs/SRS/), [`docs/Slides`](docs/Slides/) |
+
 ## Repository structure
 
 ```
 .github/workflows/ci.yml   automatic analyze + test + web build on every push and pull request
 docs/                      Proposal, SRS, SDS, STD and Slides (see docs/README.md)
-process_forms/             LOGAI (AI-tool use) and meeting minutes
+process_forms/             LOGD (defects), LOGAI (AI-tool use) and meeting minutes
 src/                       the Flutter app
 ```
 

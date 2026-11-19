@@ -15,8 +15,13 @@ yet; give them an FR ID in the SRS, then use that ID in the issue title.
 | `Must` | `#f03234` | Must-have requirement |
 | `Should` | `#fbca04` | Should-have requirement |
 | `Could` | `#0052cc` | Could-have requirement |
+| `change-request` | `#5319e7` | Requirement change after SRS baseline approval (SRS §4.4) |
 
 The default labels (`bug`, `documentation`, `enhancement`…) can stay.
+
+Per SRS §4.4, any change to an approved requirement is opened as an issue with the
+`change-request` label. The Team Leader and Planning Manager assess its impact, and the client
+approves it before anyone implements it.
 
 ## 2. Milestones (Issues → Milestones → New milestone)
 
