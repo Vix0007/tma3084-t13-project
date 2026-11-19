@@ -3,10 +3,10 @@
 | Folder | Document | Status |
 |---|---|---|
 | `Proposal/` | Project proposal v1.0 (16/10/2026) + presentation slides | Done |
-| `SRS/` | Software Requirements Specification | In progress |
+| `SRS/` | Software Requirements Specification v2.0 (assessed, M2) – 20/11/2026, signed by the client | Done |
 | `SDS/` | Software Design Specification | Not started |
 | `STD/` | Software Test Document | Not started |
-| `Slides/` | Milestone presentation slides | In progress |
+| `Slides/` | Milestone presentation slides (M2: SRS and app demo) | M2 done |
 
 Meeting minutes and the AI-use log are in `../process_forms/`.
 

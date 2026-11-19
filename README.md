@@ -46,7 +46,8 @@ drivers, and drivers manage their trips and see their earnings. The app has thre
 | 16 Nov 2026 | **SRS accepted by the client** (Saie Bin Kip), signed | SRS §4.5 Client Acceptance of Requirements |
 | 18 Nov 2026 | Slides and video tasks distributed | |
 | 19 Nov 2026 | Figma design converted to the Flutter prototype; GitHub repository set up | [`src/`](src/) |
-| 19–20 Nov 2026 | SRS and slides finalised; repository organised into `src/`, `docs/`, `process_forms/` | [`docs/SRS`](docs/SRS/), [`docs/Slides`](docs/Slides/) |
+| 19–20 Nov 2026 | Repository organised into `src/`, `docs/`, `process_forms/`; GitHub Issues and milestones created | [Issues](https://github.com/Vix0007/tma3084-t13-project/issues) |
+| 20 Nov 2026 | **SRS v2.0 and M2 slides submitted** (M2) | [SRS v2.0](docs/SRS/TMA3084_G01_T13_SRS_v2.0.pdf), [Slides](docs/Slides/TMA3084_G01_T13_SRS_Presentation.pdf) |
 
 ## Repository structure
 
