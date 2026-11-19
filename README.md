@@ -1,28 +1,65 @@
-# VanQ – Flutter app (from the VanQ Prototype – T13 Figma file)
+# VanQ – Van Rental, Simplified
 
-A UI-only Flutter app built from your Figma screens. It uses sample data and has no backend yet.
+**VanQ: Van Rental Management App for Tourists**, a Software Engineering Laboratory (**TMA3084**)
+project by **G01_T13 (Team MLM)**, Universiti Malaysia Sarawak, Semester 1 2026/2027.
 
-## Run it
+VanQ replaces Van Sewa Samariang's manual WhatsApp booking process. Tourists book a van
+(self-drive or with a driver), the owner verifies documents and deposits and assigns vans and
+drivers, and drivers manage their trips and see their earnings. The app has three roles:
+**Customer**, **Driver** and **Admin (owner)**. It is built with Flutter, with a Supabase backend planned.
 
-You need the Flutter SDK (3.19 or newer).
+> Current state: a clickable Flutter prototype of all 21 Figma screens, using sample data with no
+> backend yet.
+
+| | |
+|---|---|
+| Client | Saie Bin Kip, CEO, Van Sewa Samariang |
+| Lecturer | Mdm. Nurfauza Jali |
+| Lab group / Demonstrator | Group 1 / Mr. Aminul Islam Rakib |
+
+## Team
+
+| Name | GitHub | TSPi role | Owns |
+|---|---|---|---|
+| Romeo Ryan Munan Anak Roland | [@Moreoss-creator](https://github.com/Moreoss-creator) | Team Leader (Software Project Manager) | FR-21 |
+| Muhammad Izzan Danish Bin Mohd Taufik | [@zannish05-code](https://github.com/zannish05-code) | Planning Manager (Lead Systems Analyst & Requirements Engineer) | FR-10, SRS |
+| Muhammad Izzat Bin Patihie | [@izzatpatihie-dev](https://github.com/izzatpatihie-dev) | Development Manager (Lead Mobile Architect) | FR-01, FR-02, FR-03, Figma design |
+| Vickson Ferrel Anak Raymond Lenggu | [@Vix0007](https://github.com/Vix0007) | Support Manager (Backend & AI Integration Specialist) | FR-20, FR-30, FR-AI-01, repository |
+| Bryan Andrew Amil | [@yonandrew](https://github.com/yonandrew) | Quality/Process Manager (QA & CI/CD Engineer) | Tests and CI |
+
+## Repository structure
+
+```
+.github/workflows/ci.yml   automatic analyze + test + web build on every push and pull request
+docs/                      Proposal, SRS, SDS, STD and Slides (see docs/README.md)
+process_forms/             LOGAI (AI-tool use) and meeting minutes
+src/                       the Flutter app
+```
+
+## Design
+
+- Figma design file: https://www.figma.com/design/TVs7lNQiVllSxmW1t3uWId/VanQ-Prototype-%E2%80%93-T13
+- Figma clickable prototype: https://www.figma.com/proto/TVs7lNQiVllSxmW1t3uWId/VanQ-Prototype-%E2%80%93-T13?node-id=3-8&starting-point-node-id=3%3A8
+
+## Run the app
+
+You need the Flutter SDK (3.47.8 is what CI uses; 3.19 or newer should work).
 
 ```bash
-cd vanq
+cd src
 flutter pub get
 flutter run -d chrome     # or just `flutter run` for a phone/emulator
 ```
 
-The `android/`, `ios/` and `web/` folders are already set up.
+Run the checks that CI runs:
 
-## Images and icons
+```bash
+cd src
+flutter analyze
+flutter test
+```
 
-- `assets/images/` holds the real Figma logo (`vanq_logo.png`) and van photos
-  (`van_hiace.png`, `van_foton.png`).
-- `assets/icons/` holds the Figma SVG icons: bottom nav (normal + `_active`), back arrow,
-  checkbox, chevron, and the small calendar/pin icons on cards. They are drawn with
-  `flutter_svg`. A few small icons (van, person, document, upload, info) are still Material icons.
-
-## Prototype flow
+## Prototype walkthrough
 
 **Login (UI-01)**: **Sign In** or **Customer** opens the customer app. **Driver** and **Admin** open those apps.
 
@@ -31,7 +68,7 @@ The `android/`, `ios/` and `web/` folders are already set up.
 - Booking form: **Continue** is enabled once you tick the licence box (self-drive) or pick **With driver**, which adds the RM 150 driver fee.
 - **Get AI place ideas** opens the AI suggestions sheet (UI-05). Every second time you open it, it shows the "fallback" state (error + Retry), so you can demo both designs.
 - Upload + summary (UI-04): tap **Upload** on the rental form and **Submit booking** becomes enabled. That opens Booking submitted.
-- Bookings (UI-06) and Profile use the bottom navigation.
+- My bookings (UI-06) and Profile use the bottom navigation.
 
 **Driver**
 - Trips (UI-07): **Start trip** switches the card to Ongoing. **End trip** asks for confirmation, then moves it to Completed.
@@ -41,9 +78,9 @@ The `android/`, `ios/` and `web/` folders are already set up.
 - Dashboard (UI-08): tap a booking to open Booking review (UI-11). Tap the **SB** avatar to open the admin profile.
 - The **Bookings** tab opens Booking review for the first booking awaiting review, as in the Figma prototype.
 - Booking review: verify the documents and tick **Deposit received** to enable **Confirm booking**. **Assign van & driver** opens UI-09.
-- Income (UI-10): the October tab uses sample numbers.
+- Income & salary (UI-10): the October tab uses sample numbers.
 
-## Project structure
+## Code structure (`src/`)
 
 ```
 lib/
@@ -57,12 +94,15 @@ lib/
   screens/driver/           UI-07 Trip schedule, Earnings
   screens/admin/            UI-08 to UI-11
   screens/shared/           Profile (Customer / Driver / Admin)
+assets/images/              Figma logo and van photos
+assets/icons/               Figma SVG icons (bottom nav, back, checkbox, chevron, calendar, pin)
+test/widget_test.dart       login + role navigation tests
 ```
 
 ## Notes
 
-- Fonts: Inter is loaded with `google_fonts`, so the first launch needs internet. To bundle the font offline, download Inter, add it under `fonts:` in `pubspec.yaml`, and set `GoogleFonts.config.allowRuntimeFetching = false`.
-- Profile text for all three roles matches the Figma screens (`lib/screens/shared/profile_screen.dart`).
-- Top spacing follows Figma (56px, 96px on Login / Booking submitted) in a browser; on a phone the
-  status bar height is added on top.
-- File upload is simulated. For real uploads, add the `file_picker` or `image_picker` package in `upload_summary_screen.dart`.
+- Fonts: Inter is loaded with `google_fonts`, so the first launch needs internet.
+- A few small icons (van, person, document, upload, info) are Material icons, not Figma ones.
+- File upload is simulated. For real uploads, add `file_picker` or `image_picker` in `upload_summary_screen.dart`.
+- Top spacing follows Figma (56px, 96px on Login and Booking submitted) in a browser; on a phone the
+  status-bar height is added on top.

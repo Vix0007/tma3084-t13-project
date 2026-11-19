@@ -144,12 +144,14 @@ class InfoRow extends StatelessWidget {
     final v = total
         ? AppText.headline(color: AppColors.brandPrimary)
         : AppText.body();
+    // Both sides may wrap, so long labels or large system text never overflow.
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(label, style: l),
+        Flexible(child: Text(label, style: l)),
         const SizedBox(width: 12),
-        Expanded(
+        Flexible(
           child: Text(value, style: v, textAlign: TextAlign.right),
         ),
       ],
