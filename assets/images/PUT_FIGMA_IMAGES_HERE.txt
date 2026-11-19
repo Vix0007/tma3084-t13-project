@@ -1,0 +1,5 @@
+Export from Figma (PNG, 2x) and save here:
+  vanq_logo.png  – "VanQ_logo 1" layer on UI-01 Login
+  van_hiace.png  – photo in "Van Card · Toyota Hiace 2023"
+  van_foton.png  – photo in "Van Card · Foton View CS2 2024"
+Until then the app shows built-in stand-ins.
